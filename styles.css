@@ -1,0 +1,121 @@
+* {
+    font-family: 'Lato', sans-serif;
+    color: #232323;
+}
+
+html {}
+
+body {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 24rem;
+    width: 400px;
+    height: 100vh;
+}
+
+h1.main-heading {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+}
+
+#tabs {
+    display: flex;
+}
+
+.tab {
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+}
+
+.tab.active {
+    background-color: #e0e0e0;
+}
+
+#task-list {
+    margin-top: 10px;
+}
+
+#task-list>div {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.button {
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    border-radius: 0.5rem;
+    width: auto;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    text-align: center;
+    color: #ffffff;
+    background-color: #1D4ED8;
+}
+
+.button:hover {
+    background-color: #1E40AF;
+}
+
+.input {
+    display: block;
+    padding: 0.625rem;
+    border-radius: 0.5rem;
+    border-width: 1px;
+    border-color: #D1D5DB;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #111827;
+    background-color: #F9FAFB;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: #111827;
+}
+
+.icon {
+    width: 1rem;
+    height: 1rem;
+    color: #1F2937;
+    margin-left: .5rem;
+}
+
+.stock-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    max-width: 24rem;
+}
+
+.stock-form-container {
+    margin-right: 0.5rem;
+    flex: 1 1 0%;
+}
+
+button {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.mb-2 {
+    margin-bottom: .5rem;
+}
