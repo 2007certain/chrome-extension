@@ -1,9 +1,7 @@
 * {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', Arial, sans-serif;
     color: #232323;
 }
-
-html {}
 
 body {
     padding: 0.5rem;
@@ -46,7 +44,6 @@ h1.main-heading {
 
 #task-list>div {
     flex: 1;
-    padding: 10px;
     background-color: #dedede;
     border-radius: 4px;
     font-size: 13px;
@@ -61,6 +58,7 @@ h1.main-heading {
 #task-list>div>a {
     text-decoration: none;
     font-weight: bold;
+    padding: 10px;
 }
 
 .button {
