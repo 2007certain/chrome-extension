@@ -1,4 +1,18 @@
 "use strict";
+document.addEventListener('click', function (event) {
+    let target = event.target;
+
+    while (target && target.tagName !== 'A') {
+        target = target.parentNode;
+    }
+
+    if (target && target.tagName === 'A' && target.href) {
+
+        chrome.runtime.sendMessage({ href: target.href });
+    }
+});
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const tabsContainer = document.getElementById('tabs');
     const taskListContainer = document.getElementById('task-list');
@@ -23,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
             taskList.forEach((task, index) => {
                 const taskItem = document.createElement('div');
                 const anc = document.createElement('a');
-                anc.href = `https://in.tradingview.com/chart/fwOTriIV/?symbol=NSE%3A${task}`;
-                anc.target = '_blank';
+                anc.href = `https://in.tradingview.com/chart/?symbol=NSE%3A${task}`;
+                // anc.target = '_selft';
                 anc.innerHTML = task;
                 // anc.addEventListener('click', function (event) {
                 //     event.preventDefault();
@@ -67,13 +81,13 @@ document.addEventListener('DOMContentLoaded', function () {
         showTaskList(listId);
     }
 
-    function deleteTask(listId, index) {
-        if (tasks[listId] && tasks[listId][index]) {
-            tasks[listId].splice(index, 1);
-            renderTabs();
-            showTaskList(listId);
-        }
-    }
+    // function deleteTask(listId, index) {
+    //     if (tasks[listId] && tasks[listId][index]) {
+    //         tasks[listId].splice(index, 1);
+    //         renderTabs();
+    //         showTaskList(listId);
+    //     }
+    // }
 
     function createNewList() {
         renderTabs();
@@ -82,16 +96,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     createNewList();
 
-    document.getElementById('new-list-button').addEventListener('click', createNewList);
-    document.getElementById('add-task-button').addEventListener('click', function () {
-        const listId = document.querySelector('.tab.active').textContent.replace('List ', '');
-        const taskInput = document.getElementById('task-input');
-        const task = taskInput.value.trim();
-        if (task !== '') {
-            addTask(listId, task);
-            taskInput.value = '';
-        }
-    });
+    // document.getElementById('new-list-button').addEventListener('click', createNewList);
+    // document.getElementById('add-task-button').addEventListener('click', function () {
+    //     const listId = document.querySelector('.tab.active').textContent.replace('List ', '');
+    //     const taskInput = document.getElementById('task-input');
+    //     const task = taskInput.value.trim();
+    //     if (task !== '') {
+    //         addTask(listId, task);
+    //         taskInput.value = '';
+    //     }
+    // });
 
 });
 
