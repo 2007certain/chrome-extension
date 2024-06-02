@@ -21,33 +21,46 @@ h1.main-heading {
 }
 
 #tabs {
+    border-bottom: 1px solid #7ae978;
     display: flex;
 }
 
 .tab {
     cursor: pointer;
     padding: 10px;
-    margin: 0 5px;
-    border: 1px solid #ccc;
-    background-color: #f0f0f0;
 }
 
 .tab.active {
-    background-color: #e0e0e0;
+    background-color: #7ae978;
+    font-weight: bolder;
+    color: #232323;
+    border-radius: 6px 6px 0 0;
 }
 
 #task-list {
     margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 #task-list>div {
-    font-size: 14px;
-    line-height: 18px;
-    margin-bottom: 10px;
+    flex: 1;
+    padding: 10px;
+    background-color: #dedede;
+    border-radius: 4px;
+    font-size: 13px;
+    margin-bottom: 6px;
+    margin-right: 6px;
     display: flex;
     justify-content: space-between;
     line-height: normal;
     cursor: pointer;
+}
+
+#task-list>div>a {
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .button {
@@ -67,6 +80,7 @@ h1.main-heading {
 
 .button:hover {
     background-color: #1E40AF;
+    cursor: pointer;
 }
 
 .input {
@@ -118,4 +132,9 @@ button {
 
 .mb-2 {
     margin-bottom: .5rem;
+}
+
+.nr {
+    text-align: center;
+    font-size: 10px;
 }
