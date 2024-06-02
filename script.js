@@ -1,6 +1,5 @@
 "use strict";
 document.addEventListener('DOMContentLoaded', function () {
-    // let initialList = INITIAL_LIST;
     const tabsContainer = document.getElementById('tabs');
     const taskListContainer = document.getElementById('task-list');
     const tasks = INITIAL_LIST;
@@ -23,14 +22,23 @@ document.addEventListener('DOMContentLoaded', function () {
         if (taskList && taskList.length > 0) {
             taskList.forEach((task, index) => {
                 const taskItem = document.createElement('div');
-                taskItem.innerHTML = `<a href="https://in.tradingview.com/chart/fwOTriIV/?symbol=NSE%3A${task}" target="_blank">${task}</a>`;
-                const deleteButton = document.createElement('button');
+                const anc = document.createElement('a');
+                anc.href = `https://in.tradingview.com/chart/fwOTriIV/?symbol=NSE%3A${task}`;
+                anc.target = '_blank';
+                anc.innerHTML = task;
+                // anc.addEventListener('click', function (event) {
+                //     event.preventDefault();
+                //     window.location.replace(event.target.href);
+                //     console.log(window.location.href, event.target.href);
+                // });
+                taskItem.appendChild(anc);
+                // const deleteButton = document.createElement('button');
                 // deleteButton.textContent = 'Delete';
-                deleteButton.innerHTML = `<svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h16M7 8v8m4-8v8M7 1h4a1 1 0 0 1 1 1v3H6V2a1 1 0 0 1 1-1ZM3 5h12v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5Z"/>
-              </svg>`
-                deleteButton.addEventListener('click', () => deleteTask(listId, index));
-                taskItem.appendChild(deleteButton);
+                // deleteButton.innerHTML = `<svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                // <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h16M7 8v8m4-8v8M7 1h4a1 1 0 0 1 1 1v3H6V2a1 1 0 0 1 1-1ZM3 5h12v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5Z"/>
+                //   </svg>`
+                // deleteButton.addEventListener('click', () => deleteTask(listId, index));
+                // taskItem.appendChild(deleteButton);
                 taskListContainer.appendChild(taskItem);
             });
         } else {
