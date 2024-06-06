@@ -6,8 +6,9 @@ document.addEventListener('click', function (event) {
     }
 
     if (target && target.tagName === 'A' && target.href) {
-        event.preventDefault();
-
-        chrome.runtime.sendMessage({ href: target.href });
+        if (target.href.indexOf('in.tradingview') > -1) {
+            event.preventDefault();
+            chrome.runtime.sendMessage({ href: target.href });
+        }
     }
 });
